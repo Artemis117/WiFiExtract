@@ -1,10 +1,8 @@
-# import lang
+import lang
 import locale
 import subprocess
 import platform
 import re
-
-import lang
 
 
 def Os_detect():
