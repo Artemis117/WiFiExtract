@@ -97,7 +97,17 @@ class WifiExtract:
             self.write_file()
 
     def extract_linux_Wifi(self, save=False, verbose=False):
-        pass
+
+        self.save = save
+        self.verbose = verbose
+
+        # Create Directory
+        command_execute(["mkdir", platform.node()])
+        
+        path = "/etc/NetworkManager/system-connections/"
+        subprocess.run("cd {}".format(path), shell=True, check=False)
+        subprocess.run("sudo cat {}*.nmconnection >> wifi.txt".format(path), shell=True, check=False)
+
 
     def extract_mac_Wifi(self, save=False, verbose=False):
         pass
